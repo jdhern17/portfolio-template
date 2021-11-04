@@ -1,0 +1,130 @@
+[{
+        "chartCategory": "summary",
+        "description": {
+            "labels": ["PowerPoint/Slides", "Word/Docs", "Excel/Sheets", "JSON/XML", "Flatfile/CSV", "API Consulting", "Browser Dev Tools", "JavaScript", "VS Code", "Single Sign-On Consulting", "HL7v2/CCDA/HL7v3", "SQL/MySQL", "HTTP Troubleshooting", "TCP/IP Troubleshooting", "Node", "Express", "MongoDB", "Scrum/Agile", "Photoshop", "VPN/Phase 1/2", "TLS/Certs/Keys"],
+            "datasets": [{
+                "label": "Years of Experience",
+                "data": [15, 15, 15, 6, 8, 5, 6, 2, 2, 3, 3, 3, 4, 2, 2, 2, 2, 1, 3, 2, 2],
+                "backgroundColor": "#dab370",
+                "borderWidth": 2,
+                "hoverBackgroundColor": "#d5a350",
+                "minBarLength": 2
+            }]
+        }
+    },
+    {
+        "chartCategory": "languages",
+        "description": {
+            "labels": ["English", "Spanish"],
+            "datasets": [{
+                "label": "Years of Experience",
+                "data": [30, 30, 5],
+                "backgroundColor": "#933710",
+                "borderWidth": 2,
+                "hoverBackgroundColor": "#d5a350",
+                "minBarLength": 2
+            }]
+        }
+    },
+    {
+        "chartCategory": "birdsEyeView",
+        "description": {
+            "labels": ["Troubleshooting", "Technical Project Delivery"],
+            "datasets": [{
+                "label": "Years of Experience",
+                "data": [5, 4, 1],
+                "backgroundColor": "#933710",
+                "borderWidth": 2,
+                "hoverBackgroundColor": "#d5a350",
+                "minBarLength": 2
+            }]
+        }
+    },
+    {
+        "chartCategory": "athena",
+        "description": {
+            "datasets": [{
+                "data": [25, 25, 25, 25],
+                "backgroundColor": ["#582c83", "#709123", "#b1b800", "#0093b2"],
+                "borderWidth": 1,
+                "borderColor": "#434343",
+                "hoverBackgroundColor": "#d5a350"
+            }],
+            "labels": [
+                "Interface Scoping & Consulting",
+                "Interface Project & Go-Live Management",
+                "Connectivity Troubleshooting",
+                "Process & Documentation Management"
+            ]
+        }
+    },
+    {
+        "chartCategory": "usds",
+        "description": {
+            "datasets": [{
+                "data": [50, 25, 25],
+                "backgroundColor": ["#c31a15", "#0e4b90", "#e3c500"],
+                "borderWidth": 1,
+                "borderColor": "#434343",
+                "hoverBackgroundColor": "#d5a350"
+            }],
+            "labels": [
+                "Project Management",
+                "Business English Instruction",
+                "Technical Support"
+            ]
+        }
+    },
+    {
+        "chartCategory": "glytec",
+        "description": {
+            "datasets": [{
+                "data": [50, 25, 25],
+                "backgroundColor": ["#0f80be", "#6db33f", "#f9fcf8"],
+                "borderWidth": 1,
+                "borderColor": "#434343",
+                "hoverBackgroundColor": "#d5a350"
+            }],
+            "labels": [
+                "Technical Project Management",
+                "Mirth/Iguana",
+                "Interface Testing"
+            ]
+        }
+    },
+    {
+        "chartCategory": "usc",
+        "description": {
+            "datasets": [{
+                "data": [25, 50, 25],
+                "backgroundColor": ["#990000", "#ffcc00", "#fff"],
+                "borderWidth": 1,
+                "borderColor": "#434343",
+                "hoverBackgroundColor": "#d5a350"
+            }],
+            "labels": [
+                "Research Methods",
+                "Mathematical Economics",
+                "Volunteering/Educational Outreach"
+            ]
+        }
+    },
+    {
+        "chartCategory": "twoU",
+        "description": {
+            "datasets": [{
+                "data": [40, 20, 20, 20],
+                "backgroundColor": ["#fff", "#1576d4", "#0f65cc", "#002d58"],
+                "borderWidth": 1,
+                "borderColor": "#434343",
+                "hoverBackgroundColor": "#d5a350"
+            }],
+            "labels": [
+                "JavaScript/React",
+                "Node/Express",
+                "MySQL/MongoDB",
+                "HTML/CSS"
+            ]
+        }
+    }
+]

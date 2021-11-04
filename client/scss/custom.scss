@@ -1,0 +1,10 @@
+$theme-colors:("white": #f0e2c7);
+$white: #f0e2c7;
+$black: #434343;
+$theme-colors:("primary": #933710);
+$primary: #933710;
+$theme-colors:("light": #dab370);
+$secondary: #d5a350;
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,41 @@
+{
+    "name": "johns-portfolio",
+    "version": "1.0.0",
+    "homepage": "https://dhzj-portfolio.herokuapp.com/",
+    "description": "Welcome to my portfolio!",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "node server.js",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "client": "cd client && npm run start",
+        "seed": "node scripts/seedDB.js",
+        "install": "cd client && npm install",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run build"
+    },
+    "OLD_repository": {
+        "type": "git",
+        "url": "git+https://github.com/jdhern17/mr-dhzj.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "OLD_bugs": {
+        "url": "https://github.com/jdhern17/mr-dhzj/issues"
+    },
+    "dependencies": {
+        "chart.js": "^2.9.4",
+        "express": "^4.17.1",
+        "hosted-git-info": "2.8.9",
+        "if-env": "^1.0.4",
+        "lodash": "4.17.21",
+        "mongoose": "^5.10.3",
+        "react-chartjs-2": "^2.10.0",
+        "y18n": "^4.0.1"
+    },
+    "devDependencies": {
+        "concurrently": "^5.3.0",
+        "nodemon": "^2.0.4"
+    }
+}
