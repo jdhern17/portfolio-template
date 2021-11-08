@@ -1,0 +1,222 @@
+:root {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+:root::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    height: 60px;
+}
+
+.footer {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: right;
+    background-color: #dab370;
+    z-index: 1;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.footerImg {
+    height: 50px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+@media (max-height: 400px) {
+    .footerImg {
+        height: 25px;
+        width: auto;
+        margin-right: 5px;
+    }
+    .footer {
+        height: 10vh;
+        padding-top: 1vh;
+    }
+    .navbar {
+        height: 10vh;
+    }
+    .navbar-brand {
+        font-size: .8rem;
+    }
+}
+
+
+/* .sideNav { */
+
+
+/* position: fixed; */
+
+
+/* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
+
+
+/* height: 100%; */
+
+
+/* width: 75px; */
+
+
+/* Set the width of the sidebar */
+
+
+/* z-index: 1; */
+
+
+/* Stay on top of everything */
+
+
+/* top: 3.4em; */
+
+
+/* Stay at the top */
+
+
+/* background-color: #222; */
+
+
+/* Black */
+
+
+/* overflow-x: hidden; */
+
+
+/* Disable horizontal scroll */
+
+
+/* padding-top: 10px; */
+
+
+/* } */
+
+.deco-none {
+    color: inherit;
+    text-decoration: inherit;
+    padding: inherit;
+}
+
+.deco-none:link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.deco-none:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+.imgStyle {
+    max-height: 50px;
+}
+
+@media (max-width: 575px) {
+    .cardImgStyle {
+        height: 100px;
+        width: auto;
+    }
+    .btn {
+        font-size: .7rem;
+        padding: 2px;
+    }
+    .resumeStyle {
+        margin-left: 25vw;
+    }
+    h1 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    .imgStyle {
+        max-width: 50vw;
+    }
+    p,
+    li {
+        font-size: .75rem;
+    }
+    /*1rem = 16px*/
+}
+
+@media (min-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .cardImgStyle {
+        height: 150px;
+        width: auto;
+    }
+    /*1rem = 16px*/
+}
+
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        font-size: 2rem;
+    }
+    /*1rem = 16px*/
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    /*1rem = 16px*/
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+    /*1rem = 16px*/
+}
+
+
+/*
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::
+  Custom media queries
+  */
+
+
+/* Set width to make card deck cards 100% width */
+
+
+/* @media (min-width: 950px) and (max-width:1100px) {
+    h1 {
+        font-size: 2.75rem;
+    }
+} */
