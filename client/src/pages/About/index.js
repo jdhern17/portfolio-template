@@ -11,15 +11,7 @@ const About = () => {
       <div className="row">
         <div className="col-lg-10 col-sm-12 col-md-12 text-center">
           <p>
-            {`Coming from a background in project & process management, systems
-            integration and web development as well as a strong appreciation for
-            continuous learning, I hope to leverage these experiences towards
-            helping underrepresented and vulnerable populations thrive. I
-            believe that long-lasting improvement comes from deliberate and
-            focused attention on critical issues and not from incidental
-            benefits granted by the status quo. I hope to work within an
-            organization striving to strengthen more than just throughput or the
-            bottom line.`}
+            {`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque architecto a magnam voluptatibus ipsam excepturi odio optio vel. Voluptatibus ratione facere iusto eos sit culpa saepe quaerat aliquid quod velit.`} 
           </p>
           <p>
            {` If you believe similarly and know of teams using software, academic
