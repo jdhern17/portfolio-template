@@ -2,8 +2,10 @@ import React from "react";
 // import mePicMed from "../../assets/images/johnpic_medium.jpg";
 import mePicMed from "../../assets/images/johnpic_medium_circle.png";
 import mePicSmall from "../../assets/images/johnpic_small_circle.png";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+// import { BLOCKS } from '@contentful/rich-text-types';
 
-const Welcome = () => {
+const Welcome = (welcomeContent) => {
   return (
     <>
       <div className="row">
@@ -14,7 +16,7 @@ const Welcome = () => {
       <div className="row">
         <div className="col-lg-10 col-sm-12 col-md-12 text-center">
           <p>
-            {`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio perferendis consequatur molestiae deserunt assumenda harum necessitatibus, nobis voluptas explicabo, omnis neque, fuga deleniti nam vitae quidem laborum rem est obcaecati!`} 
+            {documentToReactComponents(welcomeContent.description)} 
           </p>
           <div className="text-center">
             <picture>
@@ -36,3 +38,12 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
+const richTextRenderOptions = {
+  renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+          const { file } = node.data.target.fields;
+          return <img src={file.url} />;
+      },
+  },
+};

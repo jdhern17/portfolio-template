@@ -27,7 +27,7 @@ const GridWrapper = styled.div`
   }
 `; 
 
-const MainContent = () => {
+const MainContent = ({welcomeContent}) => {
   const componentsList = {
     Welcome: Welcome,
     About: About,
@@ -47,7 +47,7 @@ const MainContent = () => {
     <>
     <GridWrapper>
       <div style={{marginBottom: "100px"}}>
-      <CurrComp />
+      <CurrComp welcomeContent={welcomeContentWelcome} />
       </div>
       </GridWrapper>
     </>
