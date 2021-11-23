@@ -12,55 +12,55 @@ const client = contentful.createClient({
     accessToken: ACCESS_TOKEN,
 });
 
-// instantiate express objects
 const app = express();
 
-// define middleware behavior for parsing requests
-// extended adds features for "json-like experience" per express documentation
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// define behavior for serving assets in production
+// app.use(express.static(path.join(__dirname, '/client/public')));
 app.get("/content", function(req, res){
-//   try {
-//     const response = await client.getEntries();
-//     return {
-//         headers,
-//         statusCode: 200,
-//         body: JSON.stringify(response.items, null, 2),
-//     };
-// } catch (ex) {
-//     return {
-//         headers,
-//         statusCode: 500,
-//         body: ex.message,
-//     };
-// }
-client.getEntries().then(response => {
-  res.json(response.items)
-}).catch(err => {
-  res.status(500).json(err);
+  console.log("reached /content route");
+  client.getEntries().then(response => {
+    console.log(response);
+    res.json(response.items)
+  }).catch(err => {
+    res.status(500).json(err);
+  })
 })
-})
+app.get("*", function(req, res) {
+  console.log("test");
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+});
 
-// if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
-// }
-
-// else {
-  // app.use(express.static(path.join(__dirname, '/client/public')));
-  // app.get("*", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "./client/public/index.html"));
-  // });
-// }
-
-// start the express api server
-// callback function defined as the console.log that triggers given a successful definition of PORT variable
-// identify port as defined by node global variable process.env where if defined use if not define as 3001
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+// if (process.env.NODE_ENV === "production") {
+  // app.use(express.static("client/build"));
+  // app.get("*", function(req, res) {
+    //   console.log("another check from within wildcard route");
+    //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    // });
+    // }
+    
+    // else {
+      // app.use(express.static(path.join(__dirname, '/client/public')));
+      
+      // }
+      
+      //   try {
+      //     const response = await client.getEntries();
+      //     return {
+      //         headers,
+      //         statusCode: 200,
+      //         body: JSON.stringify(response.items, null, 2),
+      //     };
+      // } catch (ex) {
+      //     return {
+      //         headers,
+      //         statusCode: 500,
+      //         body: ex.message,
+      //     };
+      // }

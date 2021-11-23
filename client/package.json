@@ -3,7 +3,9 @@
     "version": "0.1.0",
     "homepage": "https://dhzj-portfolio.herokuapp.com/",
     "private": true,
+    "proxy": "http://localhost:3001/",
     "dependencies": {
+        "@contentful/rich-text-react-renderer": "^15.6.2",
         "bootstrap": "^4.5.2",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",

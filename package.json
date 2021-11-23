@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "npm run start:prod",
         "start:prod": "node server.js",
-        "start:dev": "concurrently \"node --ignore 'client/*'\" \"npm run client\"",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
         "client": "cd client && npm run start",
         "seed": "node scripts/seedDB.js",
         "install": "cd client && npm install && npm run build",
@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "chart.js": "^2.9.4",
+        "contentful": "^9.1.4",
+        "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "hosted-git-info": "2.8.9",
         "if-env": "^1.0.4",

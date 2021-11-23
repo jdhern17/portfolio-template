@@ -47,7 +47,7 @@ const MainContent = ({welcomeContent}) => {
     <>
     <GridWrapper>
       <div style={{marginBottom: "100px"}}>
-      <CurrComp welcomeContent={welcomeContentWelcome} />
+      <CurrComp welcomeContent={welcomeContent} />
       </div>
       </GridWrapper>
     </>

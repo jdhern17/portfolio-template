@@ -39,11 +39,11 @@ const Welcome = (welcomeContent) => {
 
 export default Welcome;
 
-const richTextRenderOptions = {
-  renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-          const { file } = node.data.target.fields;
-          return <img src={file.url} />;
-      },
-  },
-};
+// const richTextRenderOptions = {
+//   renderNode: {
+//       [BLOCKS.EMBEDDED_ASSET]: (node) => {
+//           const { file } = node.data.target.fields;
+//           return <img src={file.url} />;
+//       },
+//   },
+// };
