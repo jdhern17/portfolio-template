@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { pdfjs } from "react-pdf";
-import resumePDF from "./Hernandez_John_Resume.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const PDFCard = () => {
+const PDFCard = ({resumePDF}) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   

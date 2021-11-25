@@ -16,8 +16,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// app.use(express.static(path.join(__dirname, '/client/public')));
+app.use(express.static(path.join(__dirname, '/client/public')));
 app.get("/content", function(req, res){
   console.log("reached /content route");
   client.getEntries().then(response => {
@@ -27,10 +26,9 @@ app.get("/content", function(req, res){
     res.status(500).json(err);
   })
 })
-app.get("*", function(req, res) {
-  console.log("test");
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
-});
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/public/index.html"));
+// });
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function () {

@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import mail from "../../assets/images/mail_logo.png";
 
-const Contact = () => {
+const Contact = ({currentContent}) => {
+  const [contactContent, setContactContent] = useState();
+
+  useEffect(()=>{
+    setContactContent(currentContent);
+    console.log("current content", currentContent);
+},[currentContent]);
+
   return (
     <>
       <div className="row">
@@ -9,31 +16,36 @@ const Contact = () => {
           <h1 className="text-center">Contact</h1>
         </div>
       </div>
+
       <div className="row">
+      {contactContent ? (
+
         <div className="col-lg-10 col-sm-12 col-md-12">
-          <div className="card text-center" style={{ width: "18rem" }}>
-            <div className="card-header">My Email</div>
+            {contactContent.map((item,index)=>{
+
+          return (
+            <>
+          <div key={index} className="card text-center">
+            <div className="card-header">{item.fields.contactTitle}</div>
             <div className="text-center">
               <img
-                src={mail}
+                src={item.fields.contactCoverImage.fields.file.url}
                 className="card-img-top cardImgStyle"
-                alt="Resume"
+                alt={item.fields.contactTitle}
               />
             </div>
             <div className="card-body">
               {/* <h5 className="card-title">Card title</h5> */}
-              <p className="card-text">hernandez.d.john@gmail.com </p>
-              <a
-                href="mailto:hernandez.d.john@gmail.com"
-                className="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Send me an Email!
-              </a>
+              <p className="card-text">{item.fields.contactUrl} </p>
             </div>
           </div>
+          <br/>
+          </>)
+            })}
         </div>
+      ):(
+        "Loading..."
+      )}
       </div>
     </>
   );

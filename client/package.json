@@ -6,6 +6,7 @@
     "proxy": "http://localhost:3001/",
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^15.6.2",
+        "@contentful/rich-text-types": "^15.7.0",
         "bootstrap": "^4.5.2",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
