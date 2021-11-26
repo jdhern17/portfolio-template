@@ -31,7 +31,8 @@ useEffect(()=>{
       <div className="row">
       {breakdownContent ? (
         <>
-        <div className="col-lg-10 col-sm-12 col-md-12">
+        <div className="col-lg-1"></div>
+        <div className="col-lg-8 col-sm-12 col-md-12">
           <div className="card text-center">
             {/* <div className="card-header">Technical Summary</div> */}
             <div className="card-body">
@@ -40,7 +41,7 @@ useEffect(()=>{
               </p>
             </div>
             <div className="card-footer">
-              <h4>Breakdown</h4>
+              <h4>Skills by Years of Experience</h4>
             </div>
           </div>
         </div>

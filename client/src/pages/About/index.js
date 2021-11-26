@@ -3,9 +3,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 
 const About = ({currentContent}) => {
-  const [aboutContent, setAboutContent] = useState(null)
+  const [aboutContent, setAboutContent] = useState()
   useEffect(()=>{
-    console.log("useEffect About");
     setAboutContent(currentContent[0].fields.aboutBodyName);
   },[currentContent])
 

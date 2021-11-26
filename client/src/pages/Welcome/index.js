@@ -7,10 +7,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 
 const Welcome = ({currentContent}) => {
-  console.log("welcome content", currentContent);
   const [welcomeContent, setWelcomeContent] = useState(null)
   useEffect(()=>{
-    console.log("useEffect Welcome");
     setWelcomeContent(currentContent[0].fields.welcomeBody);
   },[currentContent])
   return (

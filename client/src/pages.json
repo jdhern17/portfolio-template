@@ -1,39 +1,47 @@
 [{
+        "id": "welcome",
         "title": "welcome",
         "linkName": "welcome",
         "pageName": "Welcome"
     },
     {
+        "id": "about",
         "title": "about",
         "linkName": "about-me",
         "pageName": "About"
     },
     {
+        "id": "resume",
         "title": "resume",
         "linkName": "one-page",
         "pageName": "Resume"
     },
     {
+        "id": "skills",
         "title": "skills",
         "linkName": "skills",
         "pageName": "Skills"
     },
     {
+        "id": "fullcv",
         "title": "cv",
         "linkName": "full-cv",
         "pageName": "FullCV"
     },
     {
+        "id": "projects",
         "title": "projects",
         "linkName": "projects",
         "pageName": "Projects"
     },
     {
+        "id": "contact",
         "title": "contact",
         "linkName": "contact",
         "pageName": "Contact"
     },
     {
+        "id": "download",
         "title": "download",
         "linkName": "download",
         "pageName": "Download"

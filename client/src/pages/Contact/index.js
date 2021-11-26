@@ -6,7 +6,6 @@ const Contact = ({currentContent}) => {
 
   useEffect(()=>{
     setContactContent(currentContent);
-    console.log("current content", currentContent);
 },[currentContent]);
 
   return (

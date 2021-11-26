@@ -64,8 +64,9 @@ const MainContent = () => {
   
   useEffect(()=>{
     if (contentfulContent){
-      let filteredContent = contentfulContent.filter(entry => entry.sys.contentType.sys.id === currentPage[0].title);
+      let filteredContent = contentfulContent.filter(entry => entry.sys.contentType.sys.id === currentPage[0].id);
       setCurrentContent(filteredContent);
+      console.log("filtered content", filteredContent);
     }
   },[linkId, contentfulContent]);
 
@@ -85,7 +86,7 @@ const MainContent = () => {
     <>
     <GridWrapper>
       <div style={{marginBottom: "100px"}}>
-        {(currentContent && (currentContent[0].sys.contentType.sys.id === currentPage[0].title)) ? (
+        {(currentContent && (currentContent[0].sys.contentType.sys.id === currentPage[0].id)) ? (
           <CurrComp currentContent={currentContent} />
           ):(
           "Loading..."
