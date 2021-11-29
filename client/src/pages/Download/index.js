@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import PDF from "../../assets/images/pdf_logo.png";
 import Resume from "../../components/PDFCard/Hernandez_John_Resume.pdf";
 
-const Download = () => {
+const Download = ({currentContent}) => {
+  const [downloadContent, setDownloadContent] = useState();
+
+  useEffect(()=>{
+    setDownloadContent(currentContent);
+},[currentContent]);
   return (
     <>
       <div className="row">
@@ -10,31 +15,40 @@ const Download = () => {
           <h1 className="text-center">Download Links</h1>
         </div>
       </div>
+      
       <div className="row">
+      {downloadContent ? (
         <div className="col-lg-10 col-sm-12 col-md-12">
-          <div className="card text-center" style={{ width: "18rem" }}>
-            <div className="card-header">My Resume</div>
+          {downloadContent.map((item,index)=>{
+            return (
+          <div key={index} className="card text-center">
+            <div className="card-header">{item.fields.downloadTitle}</div>
             <div className="text-center">
               <img
-                src={PDF}
+                src={item.fields.downloadCoverImage.fields.file.url}
                 className="card-img-top cardImgStyle"
-                alt="Resume"
+                alt={item.fields.downloadTitle}
               />
             </div>
             <div className="card-body">
               {/* <h5 className="card-title">Card title</h5> */}
-              <p className="card-text">Download my Resume Here! </p>
+              <p className="card-text">{item.fields.downloadDescription}</p>
               <a
-                href={Resume}
+                href={item.fields.downloadUrl}
                 className="btn btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Go To Resume
+                Download
               </a>
             </div>
-          </div>
+          <br/>
+          </div>)
+          })} 
         </div>
+         ) : (
+          "Loading..."
+        )}
       </div>
     </>
   );

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
 
 const Projects = ({currentContent}) => {
   const [projectsContent, setProjectsContent] = useState();
@@ -21,8 +19,8 @@ const Projects = ({currentContent}) => {
         <div className="col-lg-10 col-sm-12 col-md-12">
           {projectsContent.map((item,index)=>{
             return (
-              <>
-            <div key={index} className="card text-center">
+              <div key={index}>
+            <div className="card text-center">
             <div className="card-header">{item.fields.projectTitle}</div>
             <div className="text-center">
               <img
@@ -46,7 +44,7 @@ const Projects = ({currentContent}) => {
             </div>
           </div>
           <br/>
-          </>)
+          </div>)
           })} 
         </div>
       ) : (

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import LinkedIn from "../../assets/images/linkedin_logo.png";
 import GitHub from "../../assets/images/github_logo.png";
 import PDF from "../../assets/images/pdf_logo.png";
 import Resume from "../PDFCard/Hernandez_John_Resume.pdf";
 
 
-const Footer = () => {
+const Footer = ({currentContent}) => {
+  const [footerContent, setFooterContent] = useState();
+
+  useEffect(()=>{
+    setFooterContent(currentContent);
+    console.log(currentContent);
+},[currentContent]);
+
   return (
     <>
             <div className="footer">

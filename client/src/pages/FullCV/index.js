@@ -38,21 +38,20 @@ const FullCV = ({currentContent}) => {
             <div className="accordion" id="accordionExample" style={{maxWidth:"75vw"}}>
             {fullCVContent.map((item,index)=>{
               return (
-                <>
-            <Collapse
-                image={<img src={denver} alt="Code For Denver" className="imgStyle" />}
-                idNum={"Zero"}
+            <Collapse key={index}
+                image={<img src={item.fields.fullcvCoverImage.fields.file.url} alt="Code For Denver" className="imgStyle" />}
+                idNum={item.sys.id}
               >
                 {fullCVContent ? (
             documentToReactComponents(
-              fullCVContent.fields.fullcvDescription,
+              item.fields.fullcvDescription,
               richTextRenderOptions
               )):(
                 "Loading..."
               )
             }
               </Collapse>
-              </>)
+              )
             })}
             </div>
           </div>

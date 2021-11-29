@@ -9,7 +9,7 @@ import Projects from "../../pages/Projects";
 import Contact from "../../pages/Contact";
 import Download from "../../pages/Download";
 import Welcome from "../../pages/Welcome";
-import { getContent } from "../../api/apiContentService";
+// import { getContent } from "../../api/apiContentService";
 
 import styled from 'styled-components';
 const GridWrapper = styled.div`
@@ -28,39 +28,13 @@ const GridWrapper = styled.div`
   }
 `; 
 
-const MainContent = () => {
-  const [contentfulContent, setContentfulContent] = useState(null);
+const MainContent = ({contentfulContent}) => {
   const { linkId } = useParams();
   const [currentContent, setCurrentContent] = useState(null);
 
   const currentPage = titleArr.filter((page) => {
     return linkId === page.linkName;
   });
-  
-  useEffect(() => {
-    async function someFunc() {
-      // setLoading(true);
-      try {
-        const res = await getContent();
-        // const entry = res.find(
-        //   (item) => item.fields.id === "welcome-about-me"
-        // ).fields;
-        
-        console.log("allTheContent", res);
-        setContentfulContent([...res]);
-        // const outcomeEntries = res.data
-        //     .filter((item) => item.sys.contentType.sys.id === 'screenerOutcome')
-        //     .map((item) => item.fields);
-        // setOutcomeContent(outcomeEntries);
-      } catch (e) {
-        console.log(e);
-        //     setError(true);
-      } finally {
-        //     setLoading(false);
-      }
-    }
-    someFunc();
-  }, []);
   
   useEffect(()=>{
     if (contentfulContent){

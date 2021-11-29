@@ -23,8 +23,8 @@ const Contact = ({currentContent}) => {
             {contactContent.map((item,index)=>{
 
           return (
-            <>
-          <div key={index} className="card text-center">
+            <div key={index}>
+          <div className="card text-center">
             <div className="card-header">{item.fields.contactTitle}</div>
             <div className="text-center">
               <img
@@ -39,7 +39,7 @@ const Contact = ({currentContent}) => {
             </div>
           </div>
           <br/>
-          </>)
+          </div>)
             })}
         </div>
       ):(
