@@ -22,25 +22,33 @@ const Projects = ({currentContent}) => {
               <div key={index}>
             <div className="card text-center">
             <div className="card-header">{item.fields.projectTitle}</div>
-            <div className="text-center">
+            {item.fields.projectCoverImage && <div className="text-center">
               <img
                 src={item.fields.projectCoverImage.fields.file.url}
                 className="card-img-top cardImgStyle"
                 alt={item.fields.projectTitle}
               />
-            </div>
+            </div>}
             <div className="card-body">
-              <p className="card-text">
+              {item.fields.projectDescription && <p className="card-text">
                 {item.fields.projectDescription}
-              </p>
-              <a
+              </p>}
+              {item.fields.projectUrl && <a
                 href={`//${item.fields.projectUrl}`}
                 className="btn btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Page
-              </a>
+                Visit
+              </a>}<br/><br/>
+              {item.fields.projectFile && <a
+                href={item.fields.projectFile.fields.file.url}
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download
+              </a>}
             </div>
           </div>
           <br/>

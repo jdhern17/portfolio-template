@@ -1,7 +1,7 @@
 import React from "react";
 // import { v4 as uuidv4 } from 'uuid';
 
-const Collapse = ({ title, children, idNum, image, imageTwo }) => {
+const Collapse = ({ title, children, idNum, image }) => {
   return (
     <>
       <div className="card">
@@ -15,9 +15,8 @@ const Collapse = ({ title, children, idNum, image, imageTwo }) => {
               aria-expanded="true"
               aria-controls={"collapse" + idNum}
             >
-                {title}
-              {image}
-              {imageTwo}
+                {image ? image : title}
+              
             </button>
           </h2>
         </div>

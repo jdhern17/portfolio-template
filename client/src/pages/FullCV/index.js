@@ -2,24 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import Collapse from "../../components/Collapse";
-import athena from "../../assets/images/athena_logo.png";
-import usds from "../../assets/images/usds_logo.png";
-import usds2 from "../../assets/images/usds_logo_text_2.png";
-import glytec from "../../assets/images/glytec_logo.png";
-import twoU from "../../assets/images/2U_logo.png";
-import usc from "../../assets/images/usc_logo.png";
-import harvard from "../../assets/images/harvard_logo.png";
-import scheck from "../../assets/images/scheck_logo.png";
-import denver from "../../assets/images/codefordenver_logo.png";
 
 const FullCV = ({currentContent}) => {
-  console.log("within FullCV component");
   const [fullCVContent, setFullCVContent] = useState();
 
   useEffect(()=>{
     setFullCVContent(currentContent);
-    console.log("current content", currentContent);
-    console.log("full cv description", currentContent[0].fields.fullcvDescription);
 },[currentContent]);
 
   return (
@@ -39,8 +27,9 @@ const FullCV = ({currentContent}) => {
             {fullCVContent.map((item,index)=>{
               return (
             <Collapse key={index}
-                image={<img src={item.fields.fullcvCoverImage.fields.file.url} alt="Code For Denver" className="imgStyle" />}
+                image={item.fields.fullcvCoverImage && <img src={item.fields.fullcvCoverImage.fields.file.url} alt="Code For Denver" className="imgStyle" />}
                 idNum={item.sys.id}
+                title={item.fields.fullcvTitle}
               >
                 {fullCVContent ? (
             documentToReactComponents(

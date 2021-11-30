@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({children, image, imageTwo}) => {
+const Card = ({children, image, title}) => {
   return (
     <>
 <div className="card text-center" style={{ margin: "10px" }}>
@@ -9,8 +9,7 @@ const Card = ({children, image, imageTwo}) => {
 {children}            </p>
           </div>
           <div className="card-footer">
-            {image}
-            {imageTwo}
+            {image ? image : title}
           </div>
         </div>
     </>

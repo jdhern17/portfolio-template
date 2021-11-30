@@ -12,7 +12,6 @@ const Skills = ({currentContent}) => {
 },[currentContent]);
 
 useEffect(()=>{
-  console.log("skills content", skillsContent);
   if(skillsContent){
     const filteredBreakdownContent = skillsContent.filter((item)=>item.fields.skills === "Breakdown");
     setBreakdownContent(filteredBreakdownContent);
@@ -60,7 +59,7 @@ useEffect(()=>{
       {companyContent ? (
         <>
         {companyContent.map((item,index)=>{
-        return (<Card key={index} image={<img src={item.fields.skillsImage.fields.file.url} alt={item.fields.skills} className="imgStyle" />}>
+        return (<Card key={index} title={item.fields.skillsTitle} image={item.fields.skillsImage && <img src={item.fields.skillsImage.fields.file.url} alt={item.fields.skills} className="imgStyle" />}>
           <Chart chartType={"doughnut"} chartObj={item.fields.skills_json_field_id.description} />
         </Card>)
         })}

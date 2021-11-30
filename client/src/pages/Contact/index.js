@@ -26,6 +26,7 @@ const Contact = ({currentContent}) => {
             <div key={index}>
           <div className="card text-center">
             <div className="card-header">{item.fields.contactTitle}</div>
+            {item.fields.contactCoverImage && (
             <div className="text-center">
               <img
                 src={item.fields.contactCoverImage.fields.file.url}
@@ -33,9 +34,11 @@ const Contact = ({currentContent}) => {
                 alt={item.fields.contactTitle}
               />
             </div>
+            )}
             <div className="card-body">
               {/* <h5 className="card-title">Card title</h5> */}
-              <p className="card-text">{item.fields.contactUrl} </p>
+              {item.fields.contactDescription && (<p className="card-text">{item.fields.contactDescription} </p>)}
+              {item.fields.contactUrl && (<p className="card-text">{item.fields.contactUrl} </p>)}
             </div>
           </div>
           <br/>

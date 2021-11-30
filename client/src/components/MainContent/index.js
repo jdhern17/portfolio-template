@@ -40,7 +40,6 @@ const MainContent = ({contentfulContent}) => {
     if (contentfulContent){
       let filteredContent = contentfulContent.filter(entry => entry.sys.contentType.sys.id === currentPage[0].id);
       setCurrentContent(filteredContent);
-      console.log("filtered content", filteredContent);
     }
   },[linkId, contentfulContent]);
 
@@ -63,7 +62,7 @@ const MainContent = ({contentfulContent}) => {
         {(currentContent && (currentContent[0].sys.contentType.sys.id === currentPage[0].id)) ? (
           <CurrComp currentContent={currentContent} />
           ):(
-          "Loading..."
+            "Loading..."
         )}
       </div>
       </GridWrapper>

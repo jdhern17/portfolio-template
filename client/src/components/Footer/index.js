@@ -5,21 +5,22 @@ import PDF from "../../assets/images/pdf_logo.png";
 import Resume from "../PDFCard/Hernandez_John_Resume.pdf";
 
 
-const Footer = ({currentContent}) => {
+const Footer = ({currentFooterContent}) => {
   const [footerContent, setFooterContent] = useState();
 
   useEffect(()=>{
-    setFooterContent(currentContent);
-    console.log(currentContent);
-},[currentContent]);
+    setFooterContent(currentFooterContent);
+},[currentFooterContent]);
 
   return (
     <>
-            <div className="footer">
-                <a href="https://www.linkedin.com/in/dhzj00/" target="_blank" rel="noopener noreferrer"><img src={LinkedIn} alt="LinkedIn" className="footerImg"/></a>
-                <a href="https://github.com/jdhern17" target="_blank" rel="noopener noreferrer"><img src={GitHub} alt="GitHub" className="footerImg"/></a>
-                <a href={Resume} target="_blank" rel="noopener noreferrer"><img src={PDF} alt="PDF" className="footerImg"/></a>
-            </div>
+       <div className="footer">
+    {footerContent &&
+       (<><a href={footerContent[0].fields.firstFooterLinkUrl} target="_blank" rel="noopener noreferrer"><img src={LinkedIn} alt="LinkedIn" className="footerImg"/></a>
+       <a href={footerContent[0].fields.secondFooterLinkUrl} target="_blank" rel="noopener noreferrer"><img src={GitHub} alt="GitHub" className="footerImg"/></a>
+       <a href={footerContent[0].fields.resumeFooter.fields.file.url} target="_blank" rel="noopener noreferrer"><img src={PDF} alt="PDF" className="footerImg"/></a></>)
+       }
+       </div>
     </>
   );
 };

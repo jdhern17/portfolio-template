@@ -20,7 +20,7 @@ function App() {
   const [error, setError] = useState(false);
   const [contentfulContent, setContentfulContent] = useState(null);
   const [navbarContent, setNavbarContent] = useState("Loading...");
-  const [footerContent, setFooterContent] = useState("Loading...");
+  const [footerContent, setFooterContent] = useState();
 
   useEffect(() => {
     async function someFunc() {
@@ -31,11 +31,12 @@ function App() {
         //   (item) => item.fields.id === "welcome-about-me"
         // ).fields;
         
-        console.log("allTheContent", res);
         setContentfulContent([...res]);
         const navbarArr = res.filter((item)=>item.sys.contentType.sys.id === "navbarTitle");
         const navbarTitle = navbarArr[0].fields.navbarEntryName;
         setNavbarContent(navbarTitle);
+        const filteredFooterContent = res.filter((item)=>item.sys.contentType.sys.id==="footer");
+        setFooterContent(filteredFooterContent);
         // const outcomeEntries = res.data
         //     .filter((item) => item.sys.contentType.sys.id === 'screenerOutcome')
         //     .map((item) => item.fields);
@@ -63,7 +64,7 @@ function App() {
               </Route>
             </Switch>
         </div>
-        <Footer />
+        <Footer currentFooterContent={footerContent} />
       </Router>
     </>
   );
