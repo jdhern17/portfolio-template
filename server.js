@@ -4,7 +4,7 @@ const path = require("path");
 require('dotenv').config();
 const contentful = require('contentful');
 
-const SPACE_ID = 'oizasd3t4lsx';
+const SPACE_ID = process.env.SPACE_ID;
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 
 const client = contentful.createClient({
