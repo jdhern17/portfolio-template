@@ -16,7 +16,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '/client/public')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 app.get("/content", function(req, res){
   console.log("reached /content route");
   client.getEntries().then(response => {
